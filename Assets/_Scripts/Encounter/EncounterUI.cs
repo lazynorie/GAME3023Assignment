@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EncounterUI : MonoBehaviour
 {
+    [SerializeField] private EncounterInstance encounter;
     [SerializeField] private TMPro.TextMeshProUGUI encounterText;
 
     [SerializeField] private GameObject abilityPanel;
@@ -15,12 +16,25 @@ public class EncounterUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animateTextCoroutine = AnimateTextCoroutine("You have encountered an opponent!");
+        animateTextCoroutine = AnimateTextCoroutine("You have encountered an opponent!",timeBetWeenCharacters);
+        StartCoroutine(animateTextCoroutine);
+        encounter.onTurnBegin.AddListener(AnnounceTurnBegin);
+        /*encounter.player.onAbilityCast.AddListener();
+        encounter.enemy.onAbilityCast.AddListener();*/
+    }
+
+    void AnnounceTurnBegin(ICharacter whoseTurn)
+    {
+        if (animateTextCoroutine!=null)
+        {
+            StopCoroutine(animateTextCoroutine);
+        }
+        animateTextCoroutine = AnimateTextCoroutine("It's " + whoseTurn.name + " 's turn",timeBetWeenCharacters);
         StartCoroutine(animateTextCoroutine);
     }
 
     // Update is called once per frame
-    IEnumerator AnimateTextCoroutine(string message)
+    IEnumerator AnimateTextCoroutine(string message, float betWeenCharacters)
     {
         abilityPanel.SetActive(false);
         encounterText.text = ""; 

@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class PlayerCharacter : ICharacter
 {
+    [SerializeField]
+    private EncounterInstance myEncounter;
     // Start is called before the first frame update
-    public override void TakeTurn()
+    public void CastAbility(int slot)
     {
-        throw new System.NotImplementedException();
+        CastAbility(slot ,this,myEncounter.enemy);
     }
 
-    void Start()
+    public override void TakeTurn(EncounterInstance encounter)
     {
-        
+        myEncounter = encounter;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

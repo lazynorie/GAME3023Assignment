@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe18373f6e50d3542ae80641cefc63ec, type: 3}
-  m_Name: NewEffect
+  m_Script: {fileID: 11500000, guid: 845d3773e3e117e4d89ca6fd9ab942d8, type: 3}
+  m_Name: Talk
   m_EditorClassIdentifier: 
+  name: Talk
+  effects: []
+  description: 

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EncounterEnemy : ICharacter
 {
-    // Start is called before the first frame update
-    public override void TakeTurn()
-    {
-        Debug.Log("Enemy character taketurn is TODO");
+  
+
+
+    public override void TakeTurn(EncounterInstance encounter)
+    { Debug.Log("Enemy character taketurn is TODO");
         throw new System.NotImplementedException();
     }
 
