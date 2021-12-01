@@ -54,7 +54,7 @@ public class PlayerBehaviour : MonoBehaviour
                 Debug.Log("You've enter a randome encounter!");
                 
                 //Enter Random Encounter
-                //SceneManager.LoadScene("Encounter");
+                SceneManager.LoadScene("BattleScene");
             }
         }
         
@@ -82,16 +82,5 @@ public class PlayerBehaviour : MonoBehaviour
        
        
     }
-
     
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("LongGrass"))
-        {
-           
-            Debug.Log("hello");
-        }
-    }*/
-    
-
 }
