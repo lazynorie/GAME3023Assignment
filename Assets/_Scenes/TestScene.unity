@@ -29212,6 +29212,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6863845236313353527, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
+      propertyPath: encounterchance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863845236313353527, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
       propertyPath: grassLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}

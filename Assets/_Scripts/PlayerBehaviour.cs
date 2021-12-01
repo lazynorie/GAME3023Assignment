@@ -14,9 +14,15 @@ public class PlayerBehaviour : MonoBehaviour
     private Animator animator;
     
     //Random Encounter
+    [Header("Random Encounter")]
     public LayerMask grassLayer;
     [SerializeField]
     private bool isMoving;
+    [SerializeField] 
+    [Range(0,100)]
+    private int encounterchance;
+    
+    
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
     
@@ -47,9 +53,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void CheckEncounter()
     {
-        if (Physics2D.OverlapCircle(transform.position,0.001f,grassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position,0.01f,grassLayer) != null)
         {
-            if (Random.Range(1, 101) <= 10)
+            if (Random.Range(1, 101) <= encounterchance)
             {
                 Debug.Log("You've enter a randome encounter!");
                 
