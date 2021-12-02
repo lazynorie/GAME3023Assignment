@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,11 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] 
     [Range(0,100)]
     private int encounterchance;
+
+    private bool inEncouter;
+
+    public UnityEvent OnEnterEncounterEvent;
+    public UnityEvent OnExitBattleEvent;
     
     
     private float nextActionTime = 0.0f;
@@ -31,6 +37,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        inEncouter = false;
     }
 
     // Update is called once per frame
@@ -53,18 +60,27 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void CheckEncounter()
     {
-        if (Physics2D.OverlapCircle(transform.position,0.01f,grassLayer) != null)
-        {
-            if (Random.Range(1, 101) <= encounterchance)
+        
+            if (Physics2D.OverlapCircle(transform.position,0.01f,grassLayer) != null)
             {
-                Debug.Log("You've enter a randome encounter!");
-                
-                //Enter Random Encounter
-                SceneManager.LoadScene("BattleScene");
+                if (Random.Range(1, 101) <= encounterchance)
+                {
+                    Debug.Log("You've enter a randome encounter!");
+                    inEncouter = true;
+                    //Enter Random Encounter
+                    StartCoroutine(BattleEntrySequence());
+
+                }
             }
-        }
         
         
+    }
+    
+    IEnumerator BattleEntrySequence()
+    {
+        //OnEnterEncounterEvent.Invoke();
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("BattleScene");
     }
 
     private void Move()
@@ -88,5 +104,12 @@ public class PlayerBehaviour : MonoBehaviour
        
        
     }
-    
+
+    public void OnExitButtonPressed()
+    {
+        //BGM event
+        OnExitBattleEvent.Invoke();
+        //Switch Scene
+        SceneManager.LoadScene("TestScene");
+    }
 }

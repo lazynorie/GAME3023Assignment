@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EncounterInstance : MonoBehaviour
 {
+    
+    
+    
     private int turnNumber;
 
     public int TurnNumber
@@ -26,6 +30,9 @@ public class EncounterInstance : MonoBehaviour
     {
         currentCharacter = player;
         player.onAbilityCast.AddListener(OnAbilityCastCallback);
+        
+        //BGM
+        MusicManager.Instance.PlayTrack(MusicManager.TrackID.Battle);
     }
 
     public void OnAbilityCastCallback(Ability casted)
@@ -53,4 +60,11 @@ public class EncounterInstance : MonoBehaviour
         onTurnBegin.Invoke(currentCharacter);
         currentCharacter.TakeTurn(this);
     }
+
+    public void OnExitButtonPressed()
+    {
+        SceneManager.LoadScene("TestScene");            
+    }
+
+    
 }
