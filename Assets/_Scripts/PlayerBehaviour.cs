@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+
+    public bool isInGrass;
     [SerializeField] private float moveSpeed = 1.0f;
 
     private Rigidbody2D rigidbody;
@@ -38,6 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         inEncouter = false;
+        isInGrass = false;
     }
 
     // Update is called once per frame
@@ -113,5 +116,19 @@ public class PlayerBehaviour : MonoBehaviour
         OnExitBattleEvent.Invoke();
         //Switch Scene
         SceneManager.LoadScene("TestScene");
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        other.gameObject.CompareTag("LongGrass");
+        Debug.Log("In Grass");
+        isInGrass = true;
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        other.gameObject.CompareTag("LongGrass");
+        Debug.Log("Out of Grass");
+        isInGrass = false;
     }
 }

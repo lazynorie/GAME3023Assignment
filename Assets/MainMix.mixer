@@ -111,7 +111,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 6b379777d0d2df14e954fe057564d10b
+    name: VolumeMusic
   m_AudioMixerGroupViews:
   - guids:
     - 27b427d98aab05e468981219c8318cce
@@ -122,7 +124,7 @@ AudioMixerController:
     - 18a65585b1197f348b43531181dc6404
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -5917519499829588289}
+  m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
