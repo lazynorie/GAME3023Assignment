@@ -60,7 +60,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void CheckEncounter()
     {
-        
+        if (!inEncouter)
+        {
             if (Physics2D.OverlapCircle(transform.position,0.01f,grassLayer) != null)
             {
                 if (Random.Range(1, 101) <= encounterchance)
@@ -72,24 +73,22 @@ public class PlayerBehaviour : MonoBehaviour
 
                 }
             }
-        
-        
+        }
     }
     
     IEnumerator BattleEntrySequence()
     {
         //OnEnterEncounterEvent.Invoke();
         yield return new WaitForSeconds(2.0f);
+        //inEncouter = false;
         SceneManager.LoadScene("BattleScene");
     }
 
     private void Move()
     {
-       
+      
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
-        rigidbody.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
-
         animator.SetFloat("Horizontal", rigidbody.velocity.x);
         animator.SetFloat("Vertical", rigidbody.velocity.y);
         animator.SetFloat("Speed", rigidbody.velocity.sqrMagnitude);
@@ -101,7 +100,10 @@ public class PlayerBehaviour : MonoBehaviour
         {
             isMoving = false;
         }
-       
+        if (!inEncouter)
+        {
+            rigidbody.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
+        }
        
     }
 
