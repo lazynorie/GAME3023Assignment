@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class IEffect : ScriptableObject
 {
-   public abstract void ApplyEffect(ICharacter self, ICharacter other);
+   public abstract void ApplyEffect(Ability ability,ICharacter self, ICharacter other);
 }

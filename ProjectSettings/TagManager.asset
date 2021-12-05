@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - LongGrass
+  - Enemy
+  - Dead
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2045201515
+    locked: 0
+  - name: UI
+    uniqueID: 3019927793
     locked: 0

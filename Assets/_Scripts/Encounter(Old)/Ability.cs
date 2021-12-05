@@ -6,21 +6,30 @@ using UnityEngine;
 public class Ability : ScriptableObject
 {
    public new string name;
-   public IEffect[] effects;
    public string description;
+   public IEffect[] effects;
+  
 
 
-   public void Cast(ICharacter self, ICharacter other)
-   
+   public new string AbilityName
    {
-      Debug.Log("Cast" + name);
-      foreach (IEffect effect in effects)
+      get
       {
-        
-         effect.ApplyEffect(self, other);
-       
+         return name;
       }
-
-      self.onAbilityCast.Invoke(this);
    }
+   public string Desc
+   {
+      get
+      {
+         return description;
+      }
+   }
+  /* public int Damage
+   {
+      get
+      {
+         return damage;
+      }
+   }*/
 }
