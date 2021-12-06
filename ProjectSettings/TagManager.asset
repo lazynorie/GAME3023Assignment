@@ -44,15 +44,30 @@ TagManager:
   - name: Background
     uniqueID: 1323307979
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Land
+    uniqueID: 3146592397
+    locked: 0
+  - name: River
+    uniqueID: 1231697443
+    locked: 0
+  - name: GroundDetails
+    uniqueID: 1788992851
     locked: 0
   - name: Grass
     uniqueID: 2867500129
     locked: 0
+  - name: Trees
+    uniqueID: 15159107
+    locked: 0
+  - name: Prop
+    uniqueID: 1701003883
+    locked: 0
   - name: Player
     uniqueID: 2045201515
     locked: 0
-  - name: UI
-    uniqueID: 3019927793
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Buidling
+    uniqueID: 4003920745
     locked: 0
