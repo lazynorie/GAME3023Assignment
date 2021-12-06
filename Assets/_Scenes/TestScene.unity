@@ -6317,15 +6317,19 @@ PrefabInstance:
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[27].m_Data
       value: 
-      objectReference: {fileID: -4232097365685025217, guid: 1438f29f830387e4fa46bce779834346, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[28].m_Data
       value: 
-      objectReference: {fileID: -7593626369557622825, guid: 1438f29f830387e4fa46bce779834346, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[29].m_Data
       value: 
-      objectReference: {fileID: 6920972106073717080, guid: 0331f7b76c98cca4ba7e37d4da04c1b0, type: 3}
+      objectReference: {fileID: -4232097365685025217, guid: 1438f29f830387e4fa46bce779834346, type: 3}
+    - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[36].m_Data
+      value: 
+      objectReference: {fileID: -7593626369557622825, guid: 1438f29f830387e4fa46bce779834346, type: 3}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_RefCount
       value: 506
@@ -7424,23 +7428,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[27].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[28].m_RefCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[29].m_RefCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[35].m_RefCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[36].m_RefCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_Tiles.Array.data[0].second.m_TileSpriteIndex
-      value: 29
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_Tiles.Array.data[56].second.m_TileSpriteIndex
-      value: 28
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_Tiles.Array.data[203].second.m_TileSpriteIndex
@@ -7792,7 +7804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_Tiles.Array.data[302].second.m_TileSpriteIndex
-      value: 27
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2779973396248820115, guid: 89c90e9bd33c832418b9450438134cf3, type: 3}
       propertyPath: m_Tiles.Array.data[303].second.m_TileSpriteIndex
@@ -30106,6 +30118,10 @@ PrefabInstance:
     - target: {fileID: 6863845236313353526, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863845236313353527, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
+      propertyPath: encounterchance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}

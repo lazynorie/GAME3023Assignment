@@ -537,7 +537,7 @@ PrefabInstance:
       objectReference: {fileID: 28234880}
     - target: {fileID: 769450767311622292, guid: 9179097c87038a244a7bd4a2a403d435, type: 3}
       propertyPath: magicCost
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 769450767311622292, guid: 9179097c87038a244a7bd4a2a403d435, type: 3}
       propertyPath: maxAttackMultiplier
@@ -2265,7 +2265,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1275039503
+  m_SortingLayerID: -995691033
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1916794332

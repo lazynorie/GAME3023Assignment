@@ -65,7 +65,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (!inEncouter)
         {
-            if (Physics2D.OverlapCircle(transform.position,0.01f,grassLayer) != null)
+            if (Physics2D.OverlapCircle(transform.position,0.001f,grassLayer) != null)
             {
                 if (Random.Range(1, 101) <= encounterchance)
                 {
@@ -84,7 +84,7 @@ public class PlayerBehaviour : MonoBehaviour
         //OnEnterEncounterEvent.Invoke();
         yield return new WaitForSeconds(2.0f);
         //inEncouter = false;
-        SceneManager.LoadScene("BattleScene");
+        SceneManager.LoadScene("BattleTestScene");
     }
 
     private void Move()
