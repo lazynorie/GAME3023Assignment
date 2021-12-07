@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class FighterStats : MonoBehaviour, IComparable
 {
@@ -59,6 +61,7 @@ public class FighterStats : MonoBehaviour, IComparable
         startMagic = magic;
 
         GameControllerObj = GameObject.Find("GameControllerObject");
+
     }
 
     public void ReceiveDamage(float damage)
@@ -72,8 +75,9 @@ public class FighterStats : MonoBehaviour, IComparable
         {
             dead = true;
             gameObject.tag = "Dead";
-            Destroy(Info);
-            Destroy(gameObject);
+            Info.SetActive(false);
+            gameObject.SetActive(false);
+ 
         } else if (damage > 0)
         {
             xNewHealthScale = healthScale.x * (health / startHealth);
@@ -82,11 +86,10 @@ public class FighterStats : MonoBehaviour, IComparable
         if(damage > 0)
         {
           GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
-          GameControllerObj.GetComponent<GameController>().battleText.text = gameObject.tag +" have taken  : "+ damage.ToString() + " of Demage";
+          GameControllerObj.GetComponent<GameController>().battleText.text = gameObject.tag +" have taken  : "+ damage.ToString() + " of Damage";
         }
         Invoke("ContinueGame", 2);
     }
-
     public void updateManaFill(float cost)
     {
         if(cost > 0)
@@ -96,7 +99,35 @@ public class FighterStats : MonoBehaviour, IComparable
             magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
         }
     }
+    public void OnExitButtonPressed()
+    {
+        if (Random.Range(1, 101) <= 2)
+        {
+        
+            StartCoroutine(Escape());
 
+        }
+        else
+        {
+            StartCoroutine(Failedescape());
+        }
+
+    }
+
+    IEnumerator Escape()
+    {
+        GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+        GameControllerObj.GetComponent<GameController>().battleText.text = "Escape Success！";
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("TestScene");
+    }
+    IEnumerator Failedescape()
+    {
+        GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+        GameControllerObj.GetComponent<GameController>().battleText.text = "Failed Escape！";
+        yield return new WaitForSeconds(1.0f);
+        GameControllerObj.GetComponent<GameController>().NextTurn();
+    }
     public bool GetDead()
     {
         return dead;

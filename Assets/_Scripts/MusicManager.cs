@@ -68,13 +68,13 @@ public class MusicManager : MonoBehaviour
         //Instance.PlayTrack(TrackID.Overworld);
     }
 
-    private void ExitCoutnerHandler()
+    public void ExitCoutnerHandler()
     {
         PlayTrack(TrackID.Overworld);
     }
 
 
-    private void EnterEncounterHandler()
+    public void EnterEncounterHandler()
     {
         PlayTrack(TrackID.Battle);
     }

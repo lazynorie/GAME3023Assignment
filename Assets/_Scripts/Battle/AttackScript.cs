@@ -51,8 +51,7 @@ public class AttackScript : MonoBehaviour
          owner.GetComponent<Animator>().Play(animationName);
          targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
       }
-        // attackerStates.updateManaFill(magicCost);
-      }
-
+      
+   }
    
 }

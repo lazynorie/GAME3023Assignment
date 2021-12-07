@@ -156,7 +156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6863845236313353526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.42, y: 0.83, z: 0}
+  m_LocalPosition: {x: 0.42270422, y: 5.958857, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 4709346183613134132}
@@ -233,7 +233,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   isMoving: 0
-  encounterchance: 0
+  encounterchance: 68
   OnEnterEncounterEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -254,8 +254,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010294914, y: 0.24520147}
-  m_Size: {x: 0.29045582, y: 0.58693624}
+  m_Offset: {x: -0.010294914, y: 0.09696126}
+  m_Size: {x: 0.29045582, y: 0.29045582}
   m_Direction: 0
 --- !u!50 &6863845236313353522
 Rigidbody2D:

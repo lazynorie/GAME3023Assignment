@@ -42,9 +42,6 @@ public class FighterAction : MonoBehaviour
          magicPrefab.GetComponent<AttackScript>().Attack(victim);
          Debug.Log("Magic!!!");
       }
-      else
-      {
-         Debug.Log("Run!!!!");
-      }
+
    }
 }

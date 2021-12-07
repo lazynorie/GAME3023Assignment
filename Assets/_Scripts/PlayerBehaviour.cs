@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    private PlayerPosSave playerPosData;
 
     public bool isInGrass;
     [SerializeField] private float moveSpeed = 1.0f;
@@ -33,10 +34,17 @@ public class PlayerBehaviour : MonoBehaviour
     
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
-    
+
+    private void Awake()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        playerPosData = FindObjectOfType<PlayerPosSave>();
+        playerPosData.PlayerPosLoad();
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         inEncouter = false;
@@ -81,6 +89,7 @@ public class PlayerBehaviour : MonoBehaviour
     
     IEnumerator BattleEntrySequence()
     {
+        playerPosData.playerPosSave();
         //OnEnterEncounterEvent.Invoke();
         yield return new WaitForSeconds(2.0f);
         //inEncouter = false;

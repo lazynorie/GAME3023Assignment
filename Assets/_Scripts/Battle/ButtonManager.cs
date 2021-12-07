@@ -24,10 +24,7 @@ public class ButtonManager : MonoBehaviour
         {
             player.GetComponent<FighterAction>().SelectAttack("magic");
         }
-       /* else
-        {
-            Debug.Log("Run Button Pressed");
-        }*/
+        
     }
 
     // Update is called once per frame
