@@ -21,6 +21,8 @@ public class EncounterInstance : MonoBehaviour
    
     public PlayerCharacter player = null;
     public AICharacter enemy = null;
+
+    private AttackScript soundclip;
     /*public ICharacter currentCharacter;
 
     public UnityEvent<PlayerCharacter> onPlayerTurnBegin;

@@ -17,7 +17,8 @@ public class GameController : MonoBehaviour
     public GameObject enemy ;
     void Start()
     {
-        MusicManager.Instance.EnterEncounterHandler();
+        //MusicManager.Instance.EnterEncounterHandler();
+        MusicManager.Instance.PlayTrack(MusicManager.TrackID.Battle);
         fighterStats = new List<FighterStats>();
        
         FighterStats currentFighterStats = player.GetComponent<FighterStats>();

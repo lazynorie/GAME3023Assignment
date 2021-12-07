@@ -51,3 +51,13 @@ MonoBehaviour:
   maxAttackMultiplier: 1.1
   minDefenseMultiplier: 0.4
   maxDefenseMultiplier: 1
+  attackClips:
+  - {fileID: 8300000, guid: b753c0835bf538a438d081770059c9c3, type: 3}
+  - {fileID: 8300000, guid: b32c52a7ef88f30419179ecc83b24742, type: 3}
+  _audioSource: {fileID: 0}
+  playerattack:
+    m_PersistentCalls:
+      m_Calls: []
+  enemyattack:
+    m_PersistentCalls:
+      m_Calls: []

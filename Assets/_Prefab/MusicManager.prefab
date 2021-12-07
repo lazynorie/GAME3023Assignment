@@ -143,4 +143,7 @@ MonoBehaviour:
   musicTracks:
   - {fileID: 8300000, guid: ac19035308b51594fa85d65fa30be397, type: 3}
   - {fileID: 8300000, guid: 114548cb2c0f9cc45ad98ea889bf45f3, type: 3}
+  - {fileID: 8300000, guid: a1c7881800c001344b13130a9fdf5150, type: 3}
+  - {fileID: 8300000, guid: bd135f3e7587aa6428e0196fe12ffc7b, type: 3}
   musicSource: {fileID: 5040800342408351108}
+  mixer: {fileID: 0}

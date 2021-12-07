@@ -32,8 +32,8 @@ public class PlayerBehaviour : MonoBehaviour
     public UnityEvent OnExitBattleEvent;
     
     
-    private float nextActionTime = 0.0f;
-    public float period = 0.1f;
+    private float nextActionTime;
+    private float period;
 
     private void Awake()
     {
@@ -49,6 +49,9 @@ public class PlayerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         inEncouter = false;
         isInGrass = false;
+
+        nextActionTime = 0.0f;
+        period = 1.0f;
     }
 
     // Update is called once per frame
@@ -91,8 +94,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         playerPosData.playerPosSave();
         //OnEnterEncounterEvent.Invoke();
-        yield return new WaitForSeconds(2.0f);
-        //inEncouter = false;
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("BattleTestScene");
     }
 

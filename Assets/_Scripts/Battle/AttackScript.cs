@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 
@@ -23,12 +24,17 @@ public class AttackScript : MonoBehaviour
    private float xMagicNewScale;
    private Vector2 magicScale;
 
+   
+   
+   
   private void Start()
    {
+      
       magicScale = GameObject.Find("PlayerMPFill").GetComponent<RectTransform>().localScale;
    }
 
-   public void Attack(GameObject victim)
+ 
+  public void Attack(GameObject victim)
    {
       attackerStates = owner.GetComponent<FighterStats>();
       targetStats = victim.GetComponent<FighterStats>();

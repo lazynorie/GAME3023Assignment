@@ -35,7 +35,9 @@ public class MusicManager : MonoBehaviour
     public enum TrackID
     {
         Overworld = 0,
-        Battle  
+        Battle = 1,
+        MainMenu = 2,
+        GameOver
     }
 
     public void PlayTrack(TrackID id)
@@ -61,8 +63,8 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         PlayerBehaviour player = FindObjectOfType<PlayerBehaviour>();
-        player.OnEnterEncounterEvent.AddListener(EnterEncounterHandler);
         DestroyAllClones();
+        //player.OnEnterEncounterEvent.AddListener(EnterEncounterHandler);
         //player.OnExitBattleEvent.AddListener(ExitCoutnerHandler);
         
         //Instance.PlayTrack(TrackID.Overworld);

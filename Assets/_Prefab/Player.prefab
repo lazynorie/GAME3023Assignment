@@ -233,14 +233,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   isMoving: 0
-  encounterchance: 68
+  encounterchance: 57
   OnEnterEncounterEvent:
     m_PersistentCalls:
       m_Calls: []
   OnExitBattleEvent:
     m_PersistentCalls:
       m_Calls: []
-  period: 0.1
 --- !u!70 &6863845236313353523
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
