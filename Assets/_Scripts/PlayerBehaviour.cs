@@ -34,7 +34,8 @@ public class PlayerBehaviour : MonoBehaviour
     
     private float nextActionTime;
     private float period;
-
+    private float counter;
+    private bool canMove;
     private void Awake()
     {
 
@@ -43,6 +44,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         playerPosData = FindObjectOfType<PlayerPosSave>();
         playerPosData.PlayerPosLoad();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -51,7 +53,8 @@ public class PlayerBehaviour : MonoBehaviour
         isInGrass = false;
 
         nextActionTime = 0.0f;
-        period = 1.0f;
+        period = 0.85f;
+        canMove = false;
     }
 
     // Update is called once per frame
@@ -62,15 +65,23 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (isMoving)
+        /*if (Time.time>2)
         {
-           if (Time.time > nextActionTime)
-            {
-                nextActionTime += period;
-                CheckEncounter();
+            canMove = true;
+        }*/
 
+       
+            if (isMoving)
+            {
+                if (Time.time > nextActionTime)
+                {
+                    nextActionTime += period;
+                    CheckEncounter();
+
+                }
             }
-        }
+       
+        
     }
 
     private void CheckEncounter()
@@ -81,6 +92,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 if (Random.Range(1, 101) <= encounterchance)
                 {
+                    playerPosData.playerPosSave();
                     Debug.Log("You've enter a randome encounter!");
                     inEncouter = true;
                     //Enter Random Encounter
@@ -93,7 +105,6 @@ public class PlayerBehaviour : MonoBehaviour
     
     IEnumerator BattleEntrySequence()
     {
-        playerPosData.playerPosSave();
         //OnEnterEncounterEvent.Invoke();
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("BattleTestScene");
@@ -121,26 +132,16 @@ public class PlayerBehaviour : MonoBehaviour
         }
        
     }
-
-    public void OnExitButtonPressed()
-    {
-        //BGM event
-        OnExitBattleEvent.Invoke();
-        //Switch Scene
-        SceneManager.LoadScene("TestScene");
-    }
-
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.CompareTag("LongGrass");
-        Debug.Log("In Grass");
         isInGrass = true;
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
         other.gameObject.CompareTag("LongGrass");
-        Debug.Log("Out of Grass");
         isInGrass = false;
     }
 }
