@@ -19,6 +19,13 @@ public class FighterStats : MonoBehaviour, IComparable
 
     [SerializeField] private GameObject Info;
 
+    [SerializeField] 
+    [Range(0,100)]
+    private int Run;
+    
+    [SerializeField] 
+    [Range(0,100)]
+    private int struggle;
     //[SerializeField] private Text battleText;
     [Header("Stats")]
     public float health;
@@ -99,9 +106,24 @@ public class FighterStats : MonoBehaviour, IComparable
             magicFill.transform.localScale = new Vector2(xNewMagicScale, magicScale.y);
         }
     }
+    public void OnStruggleButtonPressed()
+    {
+        if (Random.Range(1, 101) <= struggle)
+        {
+        
+            StartCoroutine(Struggle());
+
+        }
+        else
+        {
+            StartCoroutine(FailedStruggle());
+        }
+
+    }
+    
     public void OnExitButtonPressed()
     {
-        if (Random.Range(1, 101) <= 2)
+        if (Random.Range(1, 101) <= Run)
         {
         
             StartCoroutine(Escape());
@@ -125,6 +147,20 @@ public class FighterStats : MonoBehaviour, IComparable
     {
         GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
         GameControllerObj.GetComponent<GameController>().battleText.text = "Failed Escape！";
+        yield return new WaitForSeconds(1.0f);
+        GameControllerObj.GetComponent<GameController>().NextTurn();
+    }
+    IEnumerator Struggle()
+    {
+        GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+        GameControllerObj.GetComponent<GameController>().battleText.text = "Struggle Success！";
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("TestScene");
+    }
+    IEnumerator FailedStruggle()
+    {
+        GameControllerObj.GetComponent<GameController>().battleText.gameObject.SetActive(true);
+        GameControllerObj.GetComponent<GameController>().battleText.text = "Failed Struggle！";
         yield return new WaitForSeconds(1.0f);
         GameControllerObj.GetComponent<GameController>().NextTurn();
     }
