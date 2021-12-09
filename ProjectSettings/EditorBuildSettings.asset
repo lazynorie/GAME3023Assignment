@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/OverWorld.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 698456af61f44dc48899017f01faa1c5
   - enabled: 1
     path: Assets/_Scenes/TestScene.unity
     guid: 2098a0b0f23900141b9c214a296bcc0d
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GameOver.unity
     guid: e1df3bdf3a69d0840bbb6d8f98f867dc
-  - enabled: 1
-    path: Assets/_Scenes/MainMenu.unity
-    guid: 698456af61f44dc48899017f01faa1c5
+  - enabled: 0
+    path: Assets/_Scenes/OverWorld.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

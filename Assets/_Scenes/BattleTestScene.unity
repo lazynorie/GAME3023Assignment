@@ -261,8 +261,8 @@ MonoBehaviour:
   healthFill: {fileID: 1415650721}
   magicFill: {fileID: 948170963}
   Info: {fileID: 205246298}
-  Run: 0
-  struggle: 0
+  Run: 20
+  struggle: 20
   health: 30
   magic: 50
   hack: 10

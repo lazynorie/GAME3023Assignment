@@ -64,10 +64,11 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (isMoving)
         {
-            if (Time.time > nextActionTime)
+           if (Time.time > nextActionTime)
             {
                 nextActionTime += period;
                 CheckEncounter();
+
             }
         }
     }

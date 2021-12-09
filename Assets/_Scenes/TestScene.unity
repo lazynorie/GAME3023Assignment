@@ -1057,7 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6863845236313353527, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
       propertyPath: encounterchance
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788b3b5ece20ff5498ee7bf8706f8baa, type: 3}
